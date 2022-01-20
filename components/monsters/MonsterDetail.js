@@ -22,23 +22,8 @@ const MonsterDetail = props => {
       return <li className={classes['monster__item']} key={i}>{monAttr.element} {monStars} {monCondition}</li>;
    };
 
-
-   const monsterName = props.name.split(" ");
-   for (var i = 0; i < monsterName.length; i++) {
-      monsterName[i] = monsterName[i].charAt(0).toUpperCase() + monsterName[i].slice(1);
-   };
-
-   const capitalizedName = monsterName.join(" ");
-
    return (
       <>
-         <Head>
-            <title>Monster: {capitalizedName}</title>
-            <meta name="description" content={props.description} />
-            <meta name="viewport" width="width-device-width" />
-            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css' />
-         </Head>
-
          <div 
             className={classes.header} 
             style={{ backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, 1)), url(${background})` }} 

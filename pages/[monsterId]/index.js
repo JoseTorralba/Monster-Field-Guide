@@ -3,20 +3,36 @@ import Head from 'next/head';
 import MonsterDetail from "../../components/monsters/MonsterDetail";
 
 const MonsterDetails = (props) => {
+
+   const monsterName = props.monsterData.name.split(" ");
+   for (var i = 0; i < monsterName.length; i++) {
+      monsterName[i] = monsterName[i].charAt(0).toUpperCase() + monsterName[i].slice(1);
+   };
+
+   const capitalizedName = monsterName.join(" ");
+
    return (
-      <MonsterDetail 
-         ailments={props.monsterData.ailments}
-         description={props.monsterData.description}
-         elements={props.monsterData.elements}
-         icon={props.monsterData.icon}
-         image={props.monsterData.render}
-         locales={props.monsterData.locales}
-         name={props.monsterData.name}
-         resistances={props.monsterData.resistances}
-         species={props.monsterData.species}
-         usefulInfo={props.monsterData.usefulInfo}
-         weaknesses={props.monsterData.weaknesses}
-      />
+      <>
+         <Head>
+            <title>Monster: {capitalizedName}</title>
+            <meta name="description" content={props.description} />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css' />
+         </Head>
+         <MonsterDetail 
+            ailments={props.monsterData.ailments}
+            description={props.monsterData.description}
+            elements={props.monsterData.elements}
+            icon={props.monsterData.icon}
+            image={props.monsterData.render}
+            locales={props.monsterData.locales}
+            name={props.monsterData.name}
+            resistances={props.monsterData.resistances}
+            species={props.monsterData.species}
+            usefulInfo={props.monsterData.usefulInfo}
+            weaknesses={props.monsterData.weaknesses}
+         />
+      </>
    );
 };
 
