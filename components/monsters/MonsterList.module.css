@@ -1,0 +1,65 @@
+.grid {
+   display: grid;
+   grid-gap: 2rem;
+   grid-template-columns: repeat(6, 1fr);
+   text-align: center;
+}
+
+.pagination {
+   align-items: center;
+   display: flex;
+   justify-content: center;
+   margin-bottom: 2.5rem;
+ }
+ 
+.paginationItem {
+   background: none;
+   border: 2px solid transparent;
+   border-radius: 50%;
+   color: #fff;
+   cursor: pointer;
+   margin-right: 1rem;
+   padding: .6rem 1rem;
+   position: relative;
+   text-align: center;
+   transition: all .1s;
+} 
+
+.paginationItem.active {
+   background-color: #8e33a7;
+   border: 2px solid #8e33a7;
+   color: #fff;
+   pointer-events: none;
+}
+
+.paginationItem:hover { background-color: #8e33a76c; }
+.prev,
+.next {
+   background: none;
+   border: none;
+   margin: 0 1rem;
+   color: #fff;
+   box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+   cursor: pointer;
+}
+
+.prev.disabled,
+.next.disabled {
+   pointer-events: none;
+   box-shadow: none;
+   color: #999;
+}
+
+@media only screen and (max-width: 56.25em) {
+   .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media only screen and (max-width: 28.125em) {
+   .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media only screen and (max-width: 20em) {
+   .prev,
+   .next { margin: 0 1rem; }
+   .grid { grid-template-columns: repeat(1, 1fr); }
+}

@@ -1,0 +1,5 @@
+README.md
+node_modules
+.DS_store
+.next
+next.config.js

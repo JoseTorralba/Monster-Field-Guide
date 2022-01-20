@@ -1,0 +1,61 @@
+.primary-heading {
+   font-size: 2rem;
+}
+
+
+.form {
+   color: #fff !important;
+   padding: 3rem 0;
+   position: relative;
+}
+
+.btn {
+   width: 100%;
+}
+
+.input {
+   font-size: 1.6rem;
+   background: none;
+   border: none;
+   border-bottom: 2px solid #fff;
+   padding: .5rem 1rem;
+   outline: none;
+   width: 100%;
+}
+
+.input:focus {
+   border-bottom: 2px solid #f0bcff;
+   color: #fff;
+}
+
+
+
+.label {
+
+   cursor: text;
+   font-size: 1.4rem;
+   padding: 0 1rem;
+   position: absolute;
+   left: 0;
+   top: 2rem;
+   transition: all .2s;
+}
+
+.input:-webkit-autofill {
+   background-color: red;
+}
+
+.input:focus ~ .label,
+.input:not(:placeholder-shown).input:not(:focus) ~ .label{
+   color: #f0bcff;
+   font-size: 1.2rem;
+   top: 0;
+}
+
+
+/* .input:focus ~ .label,
+.input:not(:placeholder-shown).input:not(:focus) ~ .label {
+   font-size: 1.2rem;
+   top: 0;
+
+} */

@@ -1,0 +1,217 @@
+/**************************
+Header
+***************************/
+
+.header {
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   position: relative;
+   height: 70vh; 
+}
+
+.header__box {
+   margin: 0 auto;
+   text-align: center;
+   max-width: 70rem;
+}
+
+.header__img {
+   /* filter: drop-shadow(0px 6px 8px #000); */
+   padding: 1rem 0;
+   width: 100%;
+}
+
+/**************************
+Monster Header
+***************************/
+.monster__header {
+   max-width: 114rem;
+   margin: 0 auto;
+}
+
+.monster__header--1,
+.monster__header--2 {
+   align-items: center;
+   background-color: #8e33a7;
+   border-radius: 5px;
+   box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+   display: flex;
+   justify-content: flex-start;
+   padding: 1rem 2rem;
+}
+
+.monster__header--1 {
+   margin-top: -7.5rem;
+   position: absolute;
+   width: auto;   
+}
+
+
+.monster__header--2 {
+   margin-bottom: 7rem;
+   margin-top: 5rem;
+   width: 30rem;
+}
+
+.monster__header--icon {
+   display: block;
+   filter: drop-shadow(0px 4px 1px #000);
+   height: 70px; 
+   padding-right: 2rem;
+}
+
+.secondary-heading { text-transform: capitalize; }
+
+.secondary-heading--main,
+.secondary-heading--sub {
+   color: #ffffff;
+   display: block;
+   text-shadow: 0px 6px 8px #000000;
+}
+
+.secondary-heading--main { font-size: 3rem; }
+.secondary-heading--sub { font-size: 2rem; }
+
+
+/**************************
+Monster Info
+***************************/
+
+.monster {
+   background-color: #2e2e2e;
+   font-size: 1.6rem;
+   padding: 3rem 0;
+   position: relative;
+}
+
+.monster__container {
+   margin: 0 auto;
+   max-width: 114rem;
+   margin-top: 5rem;
+}
+
+.monster__grid {
+   background-color: #424242;
+   border-radius: 5px;
+   box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+   display: grid;
+   grid-gap: 0 4rem;
+   grid-template-columns: repeat(2, 1fr);
+   padding: 4rem 2rem;
+   position: relative;
+}
+
+.monster__info--element { text-transform: capitalize; }
+.monster__info--text { margin-bottom: 2rem; }
+.monster__info--subject { color: #f0bcff; }
+
+.monster__list {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   text-transform: capitalize;
+   grid-column-gap: 1rem;
+}
+
+.monster__item {
+   list-style: none;
+   text-transform: capitalize;
+}
+
+
+/**************************
+Monster Locales
+***************************/
+
+.monster__locales {
+   display: grid;
+   grid-gap: 3rem;
+   grid-template-columns: repeat(3, 1fr);
+}
+
+.monster__locale {
+   background-color: #424242;
+   border-radius: 5px;
+   box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+}
+.monster__locale--img { width: 100%; }
+
+.monster__locale--text {
+   color: #fff;
+   padding: .6rem 0;
+   text-align: center;
+   text-transform: capitalize;
+}
+
+
+/**************************
+Media Queries
+***************************/
+
+@media only screen and (max-width: 62.5em) {
+   .header { height: 60vh; }
+   .monster__grid { grid-template-columns: repeat(1, 1fr); }
+   .monster__header,
+   .monster__container { max-width: 75rem; }
+}
+
+@media only screen and (max-width: 56.25em) {
+   .header { 
+      background-attachment: scroll;
+      height: 50vh; 
+   }
+   .monster__grid { grid-template-columns: repeat(1, 1fr); }
+}
+
+
+@media only screen and (max-width: 37.5em) {
+   .header { height: auto; }
+   .header__box { padding: 0 3rem; }
+
+   .monster__header--1,
+   .monster__header--2 {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+   }
+
+   .monster__container { max-width: 80rem; }
+   
+
+   .monster__grid {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 2rem;
+   }
+
+   .monster__list--info { margin-bottom: 1rem; }
+
+   .monster__locales {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 1rem;
+   }
+}
+
+@media only screen and (max-width: 25.875em) {
+   .monster__header--1 { margin-top: -6rem; }
+   .monster__header--2 { width: 20rem; }
+
+   .monster__header--icon {
+      padding-right: 1rem;
+      height: 50px; 
+   }
+   .secondary-heading--main { font-size: 2rem; }
+   .secondary-heading--sub { font-size: 1.6rem; }
+
+   .monster__list {
+      grid-gap: 2rem 0;
+      grid-template-columns: repeat(1, 1fr);
+   }
+
+   .monster__locales { grid-gap: 3rem 1.5rem; }
+}
+
+@media only screen and (max-width: 20em) {
+   .secondary-heading--main { font-size: 1.8rem; }
+   .secondary-heading--sub { font-size: 1.6rem; }
+   .monster__list { grid-gap: 1rem 0; }
+   .monster__locales { grid-template-columns: repeat(1, 1fr); }
+}

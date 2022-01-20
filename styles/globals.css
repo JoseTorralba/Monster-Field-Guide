@@ -1,0 +1,47 @@
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html,
+body {
+   background-color: #222;
+   color: #fff;
+   font-size: 62.5%; 
+   line-height: 1.5;
+   padding: 0;
+   margin: 0;
+   text-rendering: optimizeLegibility;
+   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.row {
+   max-width: 114rem;
+   margin: 0 auto;
+}
+
+
+@media only screen and (max-width: 62.5em) {
+   html {
+      font-size: 50%;
+   }
+   .row {
+      padding: 0 2rem;
+   }
+}
+
+@media only screen and (max-width: 25.875em) {
+   html {
+      font-size: 56.25%;
+   }
+}
