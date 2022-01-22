@@ -10,10 +10,7 @@ const HomePage = props => {
       <div className={classes.header}>
          <Head>
             <title>Monster Hunter Field Guide</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
             <meta name="description" content="Search or browse all available monsters from Monster Hunter: World / Iceborne" />
-            <link rel="icon" href="/favicon.ico" />
-            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css' />
          </Head>
 
          <div className='row'>

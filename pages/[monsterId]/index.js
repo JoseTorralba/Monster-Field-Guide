@@ -10,14 +10,11 @@ const MonsterDetails = (props) => {
    };
 
    const capitalizedName = monsterName.join(" ");
-
    return (
       <>
          <Head>
             <title>Monster: {capitalizedName}</title>
-            <meta name="description" content={props.description} />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css' />
+            <meta name="description" content={props.monsterData.description} />
          </Head>
          <MonsterDetail 
             ailments={props.monsterData.ailments}
