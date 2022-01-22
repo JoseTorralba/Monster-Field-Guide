@@ -5,7 +5,7 @@ const Layout = props => {
    return (
       <div>
          <Navigation />
-         <main>{props.children}</main>
+         <main className={classes.main}>{props.children}</main>
          <footer className={classes.footer}>
             <div className="row">
                <p>&copy; 2022 Designed & Developed by Jose Torralba</p>

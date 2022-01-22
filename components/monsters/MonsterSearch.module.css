@@ -2,18 +2,35 @@
    font-size: 2rem;
 }
 
-
 .form {
    color: #fff !important;
    padding: 3rem 0;
    position: relative;
+   display: grid;
+   grid-template-columns: 80% 1fr;
+   grid-gap: 0 2rem;
 }
 
 .btn {
+   background-color: #8e33a7;
+   border: solid 2px #8e33a7;
+   border-radius: 5px;
+   color: #fff;
+   cursor: pointer;
+   font-size: 1.5rem;
+   padding: .5rem 1rem;
+   transition: all .1s;
    width: 100%;
 }
 
+.btn:hover {
+   background-color: #f0bcff;
+   border: solid 2px #f0bcff;
+   color: #000;
+}
+
 .input {
+   color: #fff;
    font-size: 1.6rem;
    background: none;
    border: none;
@@ -31,31 +48,38 @@
 
 
 .label {
-
    cursor: text;
    font-size: 1.4rem;
    padding: 0 1rem;
    position: absolute;
    left: 0;
-   top: 2rem;
+   top: 3rem;
    transition: all .2s;
 }
 
-.input:-webkit-autofill {
-   background-color: red;
+.input::placeholder {
+   opacity: 0;
 }
 
-.input:focus ~ .label,
-.input:not(:placeholder-shown).input:not(:focus) ~ .label{
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
    color: #f0bcff;
-   font-size: 1.2rem;
    top: 0;
 }
 
+@media only screen and (max-width: 56.25em) {
+   .form {
+      grid-template-columns: 70% 1fr;
+   }
+}
 
-/* .input:focus ~ .label,
-.input:not(:placeholder-shown).input:not(:focus) ~ .label {
-   font-size: 1.2rem;
-   top: 0;
+@media only screen and (max-width: 28.125em) {
+   .form {
 
-} */
+      grid-template-columns: repeat(1, 1fr);
+   }
+
+   .btn {
+      margin: 3rem 0 0;
+   }     
+}

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useRouter } from "next/router";
-import classes from './MonsterSearch.module.css';
 import { motion } from "framer-motion";
+import classes from './MonsterSearch.module.css';
 
 const MonsterSearch = props => {
    const router = useRouter();
@@ -19,22 +19,17 @@ const MonsterSearch = props => {
    };
 
    return (
-      <form className={classes.form} onSubmit={submitHandler}>
-         <motion.div
-            initial={{
-               opacity: 0, 
-            }}
-            animate={{ opacity: 1}}
-            transition={{ duration: .6}}
-         >
-            <input placeholder=" " className={classes.input} type="text" id="name" ref={nameInputRef} required></input>
-            <label className={classes.label} htmlFor="name">Search for a monster...</label>
-         </motion.div>
-
-         {/* <div>
-            <button className={classes.btn}>Search Monster</button>
-         </div> */}
-      </form>
+      <motion.form 
+         initial={{ opacity: 0 }}
+         animate={{ opacity: 1}}
+         transition={{ duration: .7}}
+         className={classes.form} 
+         onSubmit={submitHandler}
+      >
+         <input placeholder="Monster Name" className={classes.input} type="text" id="name" ref={nameInputRef} autoComplete="off" required></input>
+         <label className={classes.label} htmlFor="name">Monster Name</label>
+         <button className={classes.btn}>Search Monster</button>
+      </motion.form>
    );
 };
 export default MonsterSearch;

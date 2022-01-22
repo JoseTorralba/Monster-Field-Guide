@@ -1,42 +1,46 @@
 .header {
+   align-items: center;
    background-color: #222;
    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
-   max-width: 100%;
-   height: 5rem;
    display: flex;
-   align-items: center;
+   height: 5rem;
    justify-content: space-between;
-   padding: 0 10%;
    margin: 0 auto;
+   padding: 0 10%;
+   position: fixed;
+   width: 100%;
    z-index: 10;
 }
 
 .header ul {
+   align-items: baseline;
+   display: flex;
    list-style: none;
    margin: 0;
    padding: 0;
-   display: flex;
-   align-items: baseline;
 }
 
 .header li {
    margin-left: 3rem;
 }
 .header a {
-   text-decoration: none;
-   font-size: 1.5rem;
    color: #fff;
+   font-size: 1.5rem;
+   text-decoration: none;
 }
 
 .header a:hover,
-.header a:active,
-.header a.active {
+.header a:active {
    color: #f0bcff;
 }
 
+.btn {
+   display: none;
+}
+
 .logo a {
-   font-size: 2.5rem;
    color: #fff;
+   font-size: 2.5rem;
    font-weight: bold;
 }
 
@@ -46,7 +50,6 @@
       padding: 0 5%;
    }
 }
-
 
 @media only screen and (max-width: 37.5em) {
    .header {
@@ -59,5 +62,64 @@
 
    .logo a {
       font-size: 2rem;
+   }
+}
+
+
+@media only screen and (max-width: 25.875em) {
+   .header ul {
+      display: block;
+   }
+
+   .btn {
+      display: block;
+      font-size: 2.5rem;
+      z-index: 100;
+   }
+
+   .navBackground {
+      background-color: #222;
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      text-align: center;
+      transition: all .4s;
+      left: 100%;
+      top: 0;
+      z-index: 90;
+   }
+
+   .active {
+      left: 0;
+   }
+
+   .list {
+      backface-visibility: hidden;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all .3s;
+      width: 100%;
+      z-index: 1000;
+   }
+
+   .fas, .fa-times {
+      position: fixed !important;
+   }
+   
+   .item a {
+
+      font-weight: 900;
+      font-size: 3.4rem;
+      text-decoration: none;
+      text-shadow: 0px 2px 4px #000;
+      text-align: center;
+      transition: all .1s;
+      border-bottom: solid 2px transparent;
+   }
+
+   .item:not(:last-child) {
+      margin-bottom: 2rem;
    }
 }

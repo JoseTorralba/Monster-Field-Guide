@@ -167,15 +167,14 @@ Media Queries
 @media only screen and (max-width: 37.5em) {
    .header { height: auto; }
    .header__box { padding: 0 3rem; }
-
+   
    .monster__header--1,
    .monster__header--2 {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
    }
 
-   .monster__container { max-width: 80rem; }
-   
+   .monster__container { max-width: 80rem; }   
 
    .monster__grid {
       grid-template-columns: repeat(1, 1fr);
@@ -189,6 +188,8 @@ Media Queries
       padding: 0 1rem;
    }
 }
+
+/* @media only screen and (max-width: 28.125em) {} */
 
 @media only screen and (max-width: 25.875em) {
    .monster__header--1 { margin-top: -6rem; }

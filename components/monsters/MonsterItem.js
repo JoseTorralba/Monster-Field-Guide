@@ -6,11 +6,11 @@ const MonsterItem = props => {
    const showDetailsHandler = () => router.push('/' + props.id);
 
    return (
-      <div className={classes.monster}>
+      <div className={classes.monster} onClick={showDetailsHandler}>
          <div className={classes.info}>
             <img className={classes.icon} src={props.icon} />
          </div>
-         <button className={classes.btn} onClick={showDetailsHandler}>{props.name}</button>
+         <p className={classes.text}>{props.name}</p>
       </div>
    );
 };
