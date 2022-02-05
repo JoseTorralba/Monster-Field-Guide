@@ -1,4 +1,5 @@
 .text-box {
+   grid-column: center-start / center-end;
    padding: 0 0 1.5rem;
 }
 

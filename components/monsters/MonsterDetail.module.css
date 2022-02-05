@@ -1,13 +1,28 @@
+.grid {
+   display: grid;
+   grid-template-rows: repeat(2, min-content);
+   grid-template-columns:
+      [full-start] minmax(auto, 1fr) 
+      [center-start] repeat(8, [col-start] minmax(min-content, 1fr) [col-end]) [center-end] 1fr [full-end]; 
+}
+
 /**************************
 Header
 ***************************/
+
 
 .header {
    background-size: cover;
    background-repeat: no-repeat;
    background-attachment: fixed;
    position: relative;
-   height: 70vh; 
+   height: min-content; 
+
+   grid-column: full-start / full-end;
+}
+
+.monster {
+   grid-column: full-start / full-end;
 }
 
 .header__box {
@@ -19,7 +34,7 @@ Header
 .header__img {
    /* filter: drop-shadow(0px 6px 8px #000); */
    padding: 1rem 0;
-   width: 100%;
+   max-width: 100%;
 }
 
 /**************************
@@ -80,7 +95,7 @@ Monster Info
 
 .monster {
    background-color: #2e2e2e;
-   font-size: 1.6rem;
+   font-size: 1.5rem;
    padding: 3rem 0;
    position: relative;
 }
@@ -97,7 +112,7 @@ Monster Info
    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
    display: grid;
    grid-gap: 0 4rem;
-   grid-template-columns: repeat(2, 1fr);
+   grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
    padding: 4rem 2rem;
    position: relative;
 }
@@ -108,12 +123,15 @@ Monster Info
 
 .monster__list {
    display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   text-transform: capitalize;
    grid-column-gap: 1rem;
+   grid-template-columns: repeat(2, max-content);
+   justify-content: center;
+   text-transform: capitalize;
 }
 
 .monster__item {
+   justify-self: stretch;
+   margin-right: 5rem;
    list-style: none;
    text-transform: capitalize;
 }
@@ -125,7 +143,7 @@ Monster Locales
 
 .monster__locales {
    display: grid;
-   grid-gap: 3rem;
+   grid-gap: 2rem;
    grid-template-columns: repeat(3, 1fr);
 }
 
@@ -134,6 +152,7 @@ Monster Locales
    border-radius: 5px;
    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
 }
+
 .monster__locale--img { width: 100%; }
 
 .monster__locale--text {
@@ -149,23 +168,23 @@ Media Queries
 ***************************/
 
 @media only screen and (max-width: 62.5em) {
-   .header { height: 60vh; }
-   .monster__grid { grid-template-columns: repeat(1, 1fr); }
    .monster__header,
    .monster__container { max-width: 75rem; }
+
+   .monster__list {
+      justify-content: start;
+   }
 }
 
 @media only screen and (max-width: 56.25em) {
-   .header { 
-      background-attachment: scroll;
-      height: 50vh; 
-   }
-   .monster__grid { grid-template-columns: repeat(1, 1fr); }
+   .header { background-attachment: scroll; }
 }
 
-
 @media only screen and (max-width: 37.5em) {
-   .header { height: auto; }
+   .monster__locales {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
    .header__box { padding: 0 3rem; }
    
    .monster__header--1,
@@ -174,45 +193,42 @@ Media Queries
       border-bottom-left-radius: 0;
    }
 
-   .monster__container { max-width: 80rem; }   
-
-   .monster__grid {
-      grid-template-columns: repeat(1, 1fr);
-      padding: 2rem;
-   }
-
    .monster__list--info { margin-bottom: 1rem; }
-
-   .monster__locales {
-      grid-template-columns: repeat(2, 1fr);
-      padding: 0 1rem;
-   }
 }
 
-/* @media only screen and (max-width: 28.125em) {} */
-
 @media only screen and (max-width: 25.875em) {
-   .monster__header--1 { margin-top: -6rem; }
-   .monster__header--2 { width: 20rem; }
+
+   .monster__list {
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+   }
+
+   .monster__grid {
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+   }
 
    .monster__header--icon {
       padding-right: 1rem;
       height: 50px; 
    }
+
+   .monster__header--1 { margin-top: -6rem; }
+   .monster__header--2 { width: 20rem; }
+
    .secondary-heading--main { font-size: 2rem; }
    .secondary-heading--sub { font-size: 1.6rem; }
+
+   .monster__locales {
+      grid-template-columns: repeat(2, 1fr);
+   }
 
    .monster__list {
       grid-gap: 2rem 0;
       grid-template-columns: repeat(1, 1fr);
    }
-
-   .monster__locales { grid-gap: 3rem 1.5rem; }
 }
 
 @media only screen and (max-width: 20em) {
-   .secondary-heading--main { font-size: 1.8rem; }
-   .secondary-heading--sub { font-size: 1.6rem; }
-   .monster__list { grid-gap: 1rem 0; }
-   .monster__locales { grid-template-columns: repeat(1, 1fr); }
+   .monster__locales {
+      grid-template-columns: repeat(1, 1fr);
+   }
 }

@@ -27,7 +27,7 @@ const MonsterList = props => {
    };
 
    return (
-      <div>
+      <div className={classes.container}>
          <div className={classes.pagination}>
             <button onClick={goToPreviousPage} className={`${classes.prev} ${currentPage === 1 ? `${classes.disabled}` : ''}`}>
                Prev

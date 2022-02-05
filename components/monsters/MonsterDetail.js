@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import Head from 'next/head';
 import classes from './MonsterDetail.module.css';
 
 const MonsterDetail = props => {
@@ -23,7 +22,7 @@ const MonsterDetail = props => {
    };
 
    return (
-      <>
+      <div className={classes.grid}>
          <div 
             className={classes.header} 
             style={{ backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, 1)), url(${background})` }} 
@@ -114,7 +113,7 @@ const MonsterDetail = props => {
                </div>
             </div>
          </motion.div>
-      </>
+      </div>
    );
 };
 export default MonsterDetail;

@@ -23,8 +23,8 @@ const MonsterSearch = props => {
          initial={{ opacity: 0 }}
          animate={{ opacity: 1}}
          transition={{ duration: .7}}
-         className={classes.form} 
          onSubmit={submitHandler}
+         className={classes.form}
       >
          <input placeholder="Monster Name" className={classes.input} type="text" id="name" ref={nameInputRef} autoComplete="off" required></input>
          <label className={classes.label} htmlFor="name">Monster Name</label>

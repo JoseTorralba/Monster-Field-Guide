@@ -3,12 +3,14 @@
 *::before {
    margin: 0;
    padding: 0;
-   box-sizing: border-box;
+   box-sizing: inherit;
 }
 
 html,
 body {
-   background-color: #222;
+   /* background-color: #222; */
+   background-color: #2e2e2e;
+   box-sizing: border-box;
    color: #fff;
    font-size: 62.5%; 
    line-height: 1.5;
@@ -24,19 +26,9 @@ a {
   text-decoration: none;
 }
 
-
-.row {
-   max-width: 114rem;
-   margin: 0 auto;
-}
-
-
 @media only screen and (max-width: 62.5em) {
    html {
       font-size: 50%;
-   }
-   .row {
-      padding: 0 2rem;
    }
 }
 

@@ -9,21 +9,19 @@ const HomePage = props => {
    return (
       <div className={classes.header}>
          <Head>
-            <title>Monster Hunter Field Guide</title>
+            <title>Monster Field Guide</title>
             <meta name="description" content="Search or browse all available monsters from Monster Hunter: World / Iceborne" />
          </Head>
 
-         <div className='row'>
-            <Instructions />
-            
-            <MonsterSearch monsters={props.monsters} />
+         <Instructions />
 
-            <MonsterList 
-               monsters={props.monsters} 
-               pageLimit={4}
-               dataLimit={18}
-            />
-         </div>
+         <MonsterSearch monsters={props.monsters} />
+
+         <MonsterList 
+            monsters={props.monsters} 
+            pageLimit={4}
+            dataLimit={18}
+         />
       </div>
    );
 };

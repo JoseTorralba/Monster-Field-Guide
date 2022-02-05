@@ -1,3 +1,7 @@
+.container {
+   grid-column: center-start / center-end;
+}
+
 .grid {
    display: grid;
    grid-gap: 2rem;
@@ -50,16 +54,23 @@
    color: #999;
 }
 
-@media only screen and (max-width: 56.25em) {
-   .grid { grid-template-columns: repeat(3, 1fr); }
+@media only screen and (max-width: 62.5em) {
+   .grid {
+      grid-template-columns: repeat(3, 1fr);
+   }
 }
 
-@media only screen and (max-width: 28.125em) {
-   .grid { grid-template-columns: repeat(2, 1fr); }
+@media only screen and (max-width: 25.875em) {
+   .grid {
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+   }
 }
 
 @media only screen and (max-width: 20em) {
    .prev,
    .next { margin: 0 1rem; }
-   .grid { grid-template-columns: repeat(1, 1fr); }
+
+   .grid {
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+   }
 }

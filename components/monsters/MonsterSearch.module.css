@@ -3,30 +3,11 @@
 }
 
 .form {
-   color: #fff !important;
+   grid-column: center-start / center-end;
    padding: 3rem 0;
    position: relative;
-   display: grid;
-   grid-template-columns: 80% 1fr;
-   grid-gap: 0 2rem;
-}
-
-.btn {
-   background-color: #8e33a7;
-   border: solid 2px #8e33a7;
-   border-radius: 5px;
-   color: #fff;
-   cursor: pointer;
-   font-size: 1.5rem;
-   padding: .5rem 1rem;
-   transition: all .1s;
-   width: 100%;
-}
-
-.btn:hover {
-   background-color: #f0bcff;
-   border: solid 2px #f0bcff;
-   color: #000;
+   display: flex;
+   justify-content: space-evenly;
 }
 
 .input {
@@ -37,15 +18,14 @@
    border-bottom: 2px solid #fff;
    padding: .5rem 1rem;
    outline: none;
-   width: 100%;
+   flex-grow: 1;
+   margin-right: 2rem;
 }
 
 .input:focus {
    border-bottom: 2px solid #f0bcff;
    color: #fff;
 }
-
-
 
 .label {
    cursor: text;
@@ -67,19 +47,31 @@
    top: 0;
 }
 
-@media only screen and (max-width: 56.25em) {
-   .form {
-      grid-template-columns: 70% 1fr;
-   }
+.btn {
+   background-color: #8e33a7;
+   border: solid 2px #8e33a7;
+   border-radius: 5px;
+   color: #fff;
+   cursor: pointer;
+   font-size: 1.5rem;
+   padding: .6rem 4rem;
+   transition: all .1s;
 }
+
+.btn:hover {
+   background-color: #f0bcff;
+   border: solid 2px #f0bcff;
+   color: #000;
+}
+
 
 @media only screen and (max-width: 28.125em) {
    .form {
-
-      grid-template-columns: repeat(1, 1fr);
-   }
-
-   .btn {
-      margin: 3rem 0 0;
+      flex-direction: column;
    }     
+
+   .input {
+      margin-right: 0;
+      margin-bottom: 2rem;
+   }
 }
