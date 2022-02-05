@@ -27,13 +27,15 @@ a {
 }
 
 @media only screen and (max-width: 62.5em) {
-   html {
-      font-size: 50%;
+   html, 
+   body {
+      font-size: 56.25%;
    }
 }
 
-@media only screen and (max-width: 25.875em) {
-   html {
-      font-size: 56.25%;
+@media only screen and (max-width: 56.25em) {
+   html, 
+   body {
+      font-size: 50%;
    }
 }
